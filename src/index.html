@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>bookList</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp/serve,src}) styles/app.css -->
+    <!-- inject:css -->
+    <!-- css files will be automatically insert here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="mainContent" class="container">
+
+      <h2>Books</h2>
+      <div class="filters">
+        <form>
+          <div class="col-md-12">
+            <h3>Filter</h3>
+          </div>
+          <div class="col-md-6" id="filters">
+            <div class="col-md-6">
+              <h5>Author Gender</h5>
+              <select id="author" multiple class="form-control">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <h5>Book Genre</h5>
+              <select id="book" multiple class="form-control">
+                <option value="Fiction">Fiction</option>
+                <option value="Drama">Drama</option>
+                <option value="Non-fiction">Non-fiction</option>
+                <option value="Realistic">Realistic</option>
+                <option value="Satire">Satire</option>
+                <option value="Horror">Horror</option>
+                <option value="Tragedy">Tragedy</option>
+                <option value="Tragicomedy">Tragicomedy</option>
+                <option value="Fantasy">Fantasy</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6" id="date">
+            <div class="col-md-4">
+              <h5>Published Date</h5>
+              <input type="text" id="datepicker" class="form-control">
+            </div>
+            <div class="col-md-8">
+              <h5>Weekday</h5>
+              <label><input type="checkbox" value="0" name="weekdays"> Sunday</label>
+              <label><input type="checkbox" value="1" name="weekdays"> Monday</label>
+              <label><input type="checkbox" value="2" name="weekdays"> Tuesday</label>
+              <label><input type="checkbox" value="3" name="weekdays"> Wednesday</label>
+              <label><input type="checkbox" value="4" name="weekdays"> Thursday</label>
+              <label><input type="checkbox" value="5" name="weekdays"> Friday</label>
+              <label><input type="checkbox" value="6" name="weekdays"> Saturday</label>
+            </div>
+          </div>
+          <div class="col-md-12 text-right">
+            <button type="button" onclick="return filter()" class="btn btn-primary">Filter</button>
+            <button type="reset" class="btn btn-default">Reset</button>
+          </div>
+        </form>
+      </div>
+      <div class="clearfix"></div>
+      <table class="table" id="bookTable">
+        <thead>
+          <th class="name" onclick="sort('name')">Name <i class="fa fa-sort"></i></th>
+          <th class="published" onclick="sort('published')" style="width:300px">Published <i class="fa fa-sort"></i></th>
+          <th class="genre" onclick="sort('genre')" style="width:200px">Genre <i class="fa fa-sort"></i></th>
+          <th class="author" onclick="sort('author', 'name')" style="width:300px">Author <i class="fa fa-sort"></i></th>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+    <div id="loader">
+      <span>
+        <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+      </span>
+    </div>
+
+    <!-- build:js(src) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- run `gulp inject` to automatically populate bower script dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+    <!-- inject:js -->
+    <!-- js files will be automatically insert here -->
+    <!-- endinject -->
+
+    <!-- inject:partials -->
+    <!-- angular templates will be automatically converted in js and inserted here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+  </body>
+</html>
